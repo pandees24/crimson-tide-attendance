@@ -5,17 +5,18 @@
  import {
    LayoutDashboard,
    Calendar,
-   ClipboardList,
-   FileText,
-   Users,
-   UserCheck,
-   Settings,
-   LogOut,
-   ChevronLeft,
-   ChevronRight,
-   GraduationCap,
-   Building2,
- } from 'lucide-react';
+  ClipboardList,
+  FileText,
+  Users,
+  UserCheck,
+  LogOut,
+  ChevronLeft,
+  ChevronRight,
+  GraduationCap,
+  Building2,
+  Fingerprint,
+  CalendarDays,
+} from 'lucide-react';
  import { cn } from '@/lib/utils';
  import { Button } from '@/components/ui/button';
  import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -39,13 +40,14 @@
          { icon: Calendar, label: 'Attendance', path: `${basePath}/attendance` },
          { icon: FileText, label: 'Leave/On-Duty', path: `${basePath}/leave` },
        ];
-     case 'faculty':
-       return [
-         ...commonItems,
-         { icon: ClipboardList, label: 'Mark Attendance', path: `${basePath}/mark-attendance` },
-         { icon: Calendar, label: 'Attendance History', path: `${basePath}/history` },
-         { icon: FileText, label: 'Leave/On-Duty', path: `${basePath}/leave` },
-       ];
+    case 'faculty':
+      return [
+        ...commonItems,
+        { icon: ClipboardList, label: 'Mark Attendance', path: `${basePath}/mark-attendance` },
+        { icon: Fingerprint, label: 'Biometric Log', path: `${basePath}/history` },
+        { icon: CalendarDays, label: 'Timetable', path: `${basePath}/timetable` },
+        { icon: FileText, label: 'Leave/On-Duty', path: `${basePath}/leave` },
+      ];
      case 'hod':
        return [
          ...commonItems,

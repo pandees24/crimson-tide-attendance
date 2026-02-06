@@ -19,6 +19,7 @@ import StudentAttendanceHistory from "./pages/student/AttendanceHistory";
 import FacultyDashboard from "./pages/faculty/FacultyDashboard";
 import MarkAttendance from "./pages/faculty/MarkAttendance";
 import FacultyLeaveForm from "./pages/faculty/LeaveForm";
+import FacultyTimetable from "./pages/faculty/Timetable";
 import FacultyAttendanceHistory from "./pages/faculty/AttendanceHistory";
 
 // HoD Pages
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/faculty" element={<FacultyDashboard />} />
             <Route path="/faculty/mark-attendance" element={<MarkAttendance />} />
             <Route path="/faculty/history" element={<FacultyAttendanceHistory />} />
+            <Route path="/faculty/timetable" element={<FacultyTimetable />} />
             <Route path="/faculty/leave" element={<FacultyLeaveForm />} />
             <Route path="/faculty/notifications" element={<Notifications />} />
             

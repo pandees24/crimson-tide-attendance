@@ -12,7 +12,7 @@
    SelectTrigger,
    SelectValue,
  } from '@/components/ui/select';
- import { Calendar, FileText, Send, Clock } from 'lucide-react';
+ import { Calendar, FileText, Send } from 'lucide-react';
  import { toast } from 'sonner';
  
  const leaveTypes = [
@@ -149,18 +149,6 @@
                  />
                </div>
  
-               {/* Approval Flow Info */}
-               <div className="p-4 rounded-xl bg-muted/50 border border-border">
-                 <div className="flex items-center gap-2 mb-2">
-                   <Clock className="w-4 h-4 text-muted-foreground" />
-                   <span className="text-sm font-medium">Approval Flow</span>
-                 </div>
-                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                   <span className="px-2 py-1 rounded bg-primary/10 text-primary">Faculty</span>
-                   <span>→</span>
-                   <span className="px-2 py-1 rounded bg-secondary/10 text-secondary">HoD</span>
-                 </div>
-               </div>
  
                {/* Submit Button */}
                <Button
