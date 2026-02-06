@@ -25,11 +25,17 @@ import FacultyAttendanceHistory from "./pages/faculty/AttendanceHistory";
 // HoD Pages
 import HodDashboard from "./pages/hod/HodDashboard";
 import HodApprovals from "./pages/hod/Approvals";
+import StaffAttendance from "./pages/hod/StaffAttendance";
+import StudentAttendance from "./pages/hod/StudentAttendance";
 
 // Admin Pages
 import SuperAdminDashboard from "./pages/admin/SuperAdminDashboard";
 import ExecutiveAdminDashboard from "./pages/admin/ExecutiveAdminDashboard";
 import AcademicAdminDashboard from "./pages/admin/AcademicAdminDashboard";
+import ManageUsers from "./pages/admin/ManageUsers";
+import Departments from "./pages/admin/Departments";
+import AllAttendance from "./pages/admin/AllAttendance";
+import ManageStudents from "./pages/admin/ManageStudents";
 
 const queryClient = new QueryClient();
 
@@ -60,27 +66,29 @@ const App = () => (
             
             {/* HoD Routes */}
             <Route path="/hod" element={<HodDashboard />} />
-            <Route path="/hod/staff" element={<HodDashboard />} />
-            <Route path="/hod/students" element={<HodDashboard />} />
+            <Route path="/hod/staff" element={<StaffAttendance />} />
+            <Route path="/hod/students" element={<StudentAttendance />} />
             <Route path="/hod/approvals" element={<HodApprovals />} />
             <Route path="/hod/notifications" element={<Notifications />} />
             
-            {/* Admin Routes */}
+            {/* Super Admin Routes */}
             <Route path="/admin/super" element={<SuperAdminDashboard />} />
-            <Route path="/admin/super/users" element={<SuperAdminDashboard />} />
-            <Route path="/admin/super/departments" element={<SuperAdminDashboard />} />
-            <Route path="/admin/super/attendance" element={<SuperAdminDashboard />} />
+            <Route path="/admin/super/users" element={<ManageUsers />} />
+            <Route path="/admin/super/departments" element={<Departments />} />
+            <Route path="/admin/super/attendance" element={<AllAttendance />} />
             <Route path="/admin/super/notifications" element={<Notifications />} />
             
+            {/* Executive Admin Routes */}
             <Route path="/admin/executive" element={<ExecutiveAdminDashboard />} />
-            <Route path="/admin/executive/users" element={<ExecutiveAdminDashboard />} />
-            <Route path="/admin/executive/attendance" element={<ExecutiveAdminDashboard />} />
-            <Route path="/admin/executive/departments" element={<ExecutiveAdminDashboard />} />
+            <Route path="/admin/executive/users" element={<ManageUsers viewOnly />} />
+            <Route path="/admin/executive/attendance" element={<AllAttendance viewOnly />} />
+            <Route path="/admin/executive/departments" element={<Departments viewOnly />} />
             <Route path="/admin/executive/notifications" element={<Notifications />} />
             
+            {/* Academic Admin Routes */}
             <Route path="/admin/academic" element={<AcademicAdminDashboard />} />
-            <Route path="/admin/academic/students" element={<AcademicAdminDashboard />} />
-            <Route path="/admin/academic/attendance" element={<AcademicAdminDashboard />} />
+            <Route path="/admin/academic/students" element={<ManageStudents />} />
+            <Route path="/admin/academic/attendance" element={<AllAttendance />} />
             <Route path="/admin/academic/notifications" element={<Notifications />} />
             
             <Route path="*" element={<NotFound />} />
